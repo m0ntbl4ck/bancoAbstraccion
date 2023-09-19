@@ -22,7 +22,7 @@ public class CuentaDeAhorros extends Cuenta{
     
     @Override
     public String obtenerDescripcion() {
-        return "Cuenta de Ahorros";
+        return "Cuenta de Ahorros ";
     }
 
     @Override

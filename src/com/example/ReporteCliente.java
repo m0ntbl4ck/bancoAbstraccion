@@ -11,7 +11,8 @@ public class ReporteCliente {
     
     
     public void generarReporte(){
-        System.out.println("REPORTE DE CLIENTES\n");
+        System.out.println("\t\t\tREPORTE DE CLIENTES");
+        System.out.println("\t\t\t===================");
         
         for (int i = 0; i < banco.getNumeroDeClientes(); i++) {
             
@@ -23,10 +24,10 @@ public class ReporteCliente {
                     cliente.getApellido());
                 
             for (int j = 0; j < cliente.getnumeroDeCuentas(); j++) {
-                Cuenta cuenta = cliente.getDeCuenta(i);
+                Cuenta cuenta = cliente.getDeCuenta(j);
                 
                 
-                System.out.println("   "+cuenta);
+                System.out.println("     "+cuenta);
                 
             }
         }

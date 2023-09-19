@@ -33,7 +33,7 @@ public class MainBanco {
         CuentaDeAhorros cuenta1 = new CuentaDeAhorros(300.00);
         cliente1.agregarCuenta(cuenta1);
         cuenta1.deposito(500);
-       cliente1.agregarCuenta(cuenta1);
+       
          
          
         banco.agregarCliente("Andres", "Cortes");

@@ -15,7 +15,7 @@ public class GuardarCuenta extends Cuenta{
 
     @Override
     public String obtenerDescripcion() {
-        return "Cuenta de Ahorros";
+        return "Cuenta de Ahorros ";
     }
 
     @Override
