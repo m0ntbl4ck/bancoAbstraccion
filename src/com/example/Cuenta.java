@@ -12,21 +12,10 @@ public abstract class Cuenta {
         this.saldo = saldo;
     }
 
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public void deposito(double monto) {
-        saldo += monto;
-    }
-
     @Override
     public String toString() {
-        return obtenerDescripcion()+"El saldo de su cuenta es: "+saldo;
+        return "El saldo de su cuenta es: "+saldo;
     }
-    
-    public abstract String obtenerDescripcion();
-    
-    public abstract boolean retiro(double monto);
+
     
 }

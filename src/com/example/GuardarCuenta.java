@@ -5,7 +5,7 @@ package com.example;
  *
  * @author mont_
  */
-public class GuardarCuenta extends Cuenta{
+public class GuardarCuenta extends Cuenta implements OperacionesCuentas{
     
     double interes = 0.06;
 
@@ -32,6 +32,11 @@ public class GuardarCuenta extends Cuenta{
     public void deposito(double monto){
         saldo += monto;
         saldo += saldo*interes;
+    }
+
+    @Override
+    public double getSaldo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

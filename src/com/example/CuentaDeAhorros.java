@@ -5,8 +5,8 @@ package com.example;
  *
  * @author mont_
  */
-public class CuentaDeAhorros extends Cuenta{
-
+public class CuentaDeAhorros extends Cuenta implements OperacionesCuentas{
+    
     private final double limiteDeRetiro;
 
     public CuentaDeAhorros(double saldo) {
@@ -34,6 +34,16 @@ public class CuentaDeAhorros extends Cuenta{
         }else{
             return false;
         }
+    }
+
+    @Override
+    public void deposito(double monto) {
+        saldo += monto;
+    }
+
+    @Override
+    public double getSaldo() {
+       return saldo;
     }
     
 }

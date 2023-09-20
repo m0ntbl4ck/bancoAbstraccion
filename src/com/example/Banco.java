@@ -5,7 +5,7 @@ package com.example;
  *
  * @author mont_
  */
-public class Banco {
+public class Banco implements InterfazBancaria{
     
     private Cliente[] clientes;
     private int numeroDeClientes;
@@ -15,18 +15,27 @@ public class Banco {
        numeroDeClientes=0;
         
     }
+    @Override
+    public void agregarCliente(String nombre, String apellido, LineaServicio lineaServicio){
+        int i =numeroDeClientes++;
+        clientes[i]= new Cliente(nombre,apellido,lineaServicio);
+    };
     
-    public void agregarCliente(String nombre, String apellido){
-        int i = numeroDeClientes++;
-        clientes[i]= new Cliente(nombre,apellido);
-    }
-
-    public Cliente getClientes(int indexCliente) {
+    @Override
+    public Cliente getCliente(int indexCliente){
         return clientes[indexCliente];
-    }
-
-    public int getNumeroDeClientes() {
+    };
+    
+    
+    @Override
+    public int getNumeroDeClientes(){
         return numeroDeClientes;
-    }
+    };
+
+    
+
+    
+    
+    
     
 }

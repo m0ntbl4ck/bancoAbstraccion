@@ -5,18 +5,19 @@ package com.example;
  *
  * @author mont_
  */
-public class ReporteCliente {
+public interface InterfazBancaria {
+    public void agregarCliente(String nombre, String apellido, LineaServicio lineaServicio);
+    public Cliente getCliente(int indexCliente);
+    public int getNumeroDeClientes();
     
-    private Banco banco;
     
-    
-    public void generarReporte(){
+    public default void generarReporte(){
         System.out.println("\t\t\tREPORTE DE CLIENTES");
         System.out.println("\t\t\t===================");
         
-        for (int i = 0; i < banco.getNumeroDeClientes(); i++) {
+        for (int i = 0; i < this.getNumeroDeClientes(); i++) {
             
-            Cliente cliente = banco.getClientes(i);
+            Cliente cliente = this.getCliente(i);
             
             System.out.println();
             System.out.println("Cliente: "+
@@ -24,7 +25,7 @@ public class ReporteCliente {
                     cliente.getApellido());
                 
             for (int j = 0; j < cliente.getnumeroDeCuentas(); j++) {
-                Cuenta cuenta = cliente.getDeCuenta(j);
+                OperacionesCuentas cuenta = cliente.getDeCuenta(j);
                 
                 
                 System.out.println("     "+cuenta);
@@ -32,14 +33,4 @@ public class ReporteCliente {
             }
         }
     }
-    public Banco getBanco(){
-        return banco;
-    }
-
-    public void setBanco(Banco banco) {
-        this.banco = banco;
-    }
-
-     
-
 }

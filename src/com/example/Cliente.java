@@ -8,14 +8,16 @@ package com.example;
 public class Cliente {
     private String primerNombre;
     private String apellido;
-    private Cuenta[] cuentas;
+    private OperacionesCuentas[] cuentas;
     private int numeroDeCuentas;
+    private LineaServicio lineaServicio;
 
-    public Cliente(String primerNombre,String apellido) {
+    public Cliente(String primerNombre,String apellido,LineaServicio lineaServicio ) {
         this.primerNombre =primerNombre;
         this.apellido = apellido;
-        cuentas = new Cuenta[10];
-        numeroDeCuentas=0;
+        this.cuentas = new OperacionesCuentas[10];
+        this.numeroDeCuentas=0;
+        this.lineaServicio = lineaServicio;
     }
 
     public String getPrimerNombre() {
@@ -25,7 +27,7 @@ public class Cliente {
     public String getApellido() {
         return apellido;
     }
-        public void agregarCuenta(Cuenta cuenta) {
+        public void agregarCuenta(OperacionesCuentas cuenta) {
         int i = numeroDeCuentas++;
        cuentas[i]= cuenta;
     }
@@ -37,8 +39,16 @@ public class Cliente {
 
 
 
-    public Cuenta getDeCuenta(int indiceCuenta) {
+    public OperacionesCuentas getDeCuenta(int indiceCuenta) {
         return cuentas[indiceCuenta];
+    }
+
+    public LineaServicio getLineaServicio() {
+        return lineaServicio;
+    }
+
+    public void setLineaServicio(LineaServicio lineaServicio) {
+        this.lineaServicio = lineaServicio;
     }
 
     
